@@ -35,33 +35,33 @@ const prod5 = new Hardware("Monitor MSI 144hz", 5, 500, 70);
 const ArrayHardware = [prod1, prod2, prod3, prod4, prod5];
 
 function menu(){
-    let opcion = 1;
-while (opcion !== 0 ) {
-    opcion = parseInt(prompt("Ingrese opción deseada:\n \n1- ALTA DE USUARIO   \n2- BUSCAR POR DNI   \n3- BUSCAR PRODUCTO  \n4- SUMAR CREDITO EN TIENDA \n\n 5- SALIR "));
+    let option = 1;
+    while (option !== 0 ) {
+        option = parseInt(prompt("Ingrese una opción:\n \n1- ALTA DE USUARIO   \n2- BUSCAR POR DNI   \n3- BUSCAR PRODUCTO  \n4- SUMAR CREDITO EN TIENDA \n\n 5- SALIR "));
     
-switch (opcion) {
-    case 1:
-        altaCliente();
-        opcion=1;
-        break;
-    case 2:
-        buscardni();
-        opcion=1;
-        break;
-    case 3:
-        buscarproducto();
-        opcion=1;
-        break;
-    case 4:
-        sumarsaldo();
-        opcion=1;
-        break;
-    case 5:
-        salir();
-        opcion = 0;
-        break;
+        switch (option) {
+            case 1:
+                altaCliente();
+                option=1;
+                break;
+            case 2:
+                buscardni();
+                option=1;
+                break;
+            case 3:
+                buscarproducto();
+                option=1;
+                break;
+            case 4:
+                sumarsaldo();
+                option=1;
+                break;
+            case 5:
+                salir();
+                option = 0;
+                break;
+     }
     }
-}
 }
 
 menu();
@@ -90,6 +90,13 @@ function buscardni() {
     menu();
 }
 
+function ingresardni(){
+
+    let dni = prompt("Ingrese el DNI del cliente a buscar: ");
+    let cliente = clientes.find(cliente => cliente.dni === dni);
+    return cliente;
+}
+
 
 function sumarsaldo() {
     let cliente =  ingresardni();
@@ -114,12 +121,4 @@ function buscarproducto(){
 
 function salir() {
     alert("Gracias vuelva prontos");
-}
-
-
-function ingresardni(){
-
-    let dni = prompt("Ingrese el DNI del cliente a buscar: ");
-    let cliente = clientes.find(cliente => cliente.dni === dni);
-    return cliente;
 }
