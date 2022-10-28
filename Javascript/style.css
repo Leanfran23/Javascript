@@ -1,0 +1,33 @@
+
+
+h1{
+    font-family:  'Trebuchet MS', sans-serif;
+    font-size: 6rem;
+    color: rgb(192, 23, 23);
+}
+
+.imgProductos {
+    width: 150px;
+    height: 200px;
+    object-fit: contain;
+    margin-top: 1rem;
+    background-color: rgba(41, 41, 41, 0);
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem;
+    background-color: rgba(41, 41, 41, 0.096);
+    border: 0;
+}
+
+.colorBoton {
+    color:white;
+    background-color: #c40b0b;
+}
+
+.colorBoton:hover {
+    background-color: rgb(104, 167, 22);
+    color: white;
+}
